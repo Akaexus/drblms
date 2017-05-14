@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Class: drblMacSelector</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Class: drblMacSelector</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+            <span class="ancestors"><a href="module-drblMacSelector.html">drblMacSelector</a>.</span>drblMacSelector</h2>
+        
+            <div class="class-description"><p>Narzędzie pozwalające na szybki wybór grupy komputerów do dystrybucji obrazów.</p></div>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+    
+    <h2>Constructor</h2>
+    
+
+    <h4 class="name" id="drblMacSelector"><span class="type-signature"></span>new drblMacSelector<span class="signature">(configPath)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Weryfikuje istnienie oraz dostęp do pliku konfiguracyjnego (domyślnie config/config.json) oraz pobiera layout z pliku config/layout.js.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>configPath</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Ścieżka dostępu do pliku konfiguracyjnego (domyślnie config/config.json).</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="libs_drblMacSelector.js.html">libs/drblMacSelector.js</a>, <a href="libs_drblMacSelector.js.html#line28">line 28</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id="assignInterfaces"><span class="type-signature"></span>assignInterfaces<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Pobiera obiekt z obiektami interfejsów używając <code>module:interfacesHarvester</code> i dodaje do layoutu.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="libs_drblMacSelector.js.html">libs/drblMacSelector.js</a>, <a href="libs_drblMacSelector.js.html#line89">line 89</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><code>module:interfacesHarvester</code></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="assignMacList"><span class="type-signature"></span>assignMacList<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Pobiera obiekt z adresami MAC używając <a href="module-macHarvester.html"><code>module:macHarvester</code></a> i dodaje do layoutu.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="libs_drblMacSelector.js.html">libs/drblMacSelector.js</a>, <a href="libs_drblMacSelector.js.html#line76">line 76</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="getLayout"><span class="type-signature"></span>getLayout<span class="signature">()</span><span class="type-signature"> &rarr; {Object}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Pobiera layout z pliku config/layout.js.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="libs_drblMacSelector.js.html">libs/drblMacSelector.js</a>, <a href="libs_drblMacSelector.js.html#line102">line 102</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Obiekt typu layout z modułu blessed.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="grabConfig"><span class="type-signature"></span>grabConfig<span class="signature">(configPath)</span><span class="type-signature"> &rarr; {<a href="module-drblMacSelector.html#~drblConfig">module:drblMacSelector~drblConfig</a>}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>grabConfig - Weryfikuje, czy pod podaną ścieżką znajduje się folder z plikiem konfiguracyjnym i zwraca jego zawartość w postaci obiektu. W razie niepowodzenia zwraca domyślną konfigurację.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>configPath</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Ścieżka dostępu do folderu z plikiem konfigracyjnym (config.json).</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="libs_drblMacSelector.js.html">libs/drblMacSelector.js</a>, <a href="libs_drblMacSelector.js.html#line51">line 51</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Konfiguracja drblMacSelector.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="module-drblMacSelector.html#~drblConfig">module:drblMacSelector~drblConfig</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="init"><span class="type-signature"></span>init<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Główna metoda odpowiadająca za odpowiednie wywołania zbierania adresów MAC, interfejsów oraz ustawienie layoutu.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="libs_drblMacSelector.js.html">libs/drblMacSelector.js</a>, <a href="libs_drblMacSelector.js.html#line158">line 158</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="parseConfig"><span class="type-signature"></span>parseConfig<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Pobiera layout z pliku <a href="config_layout.js.html"><code>config/layout.js</code></a>.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="libs_drblMacSelector.js.html">libs/drblMacSelector.js</a>, <a href="libs_drblMacSelector.js.html#line130">line 130</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="writeConfig"><span class="type-signature"></span>writeConfig<span class="signature">(drblConfig)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Zapisuje ustawienia do pliku konfiguracyjnego DRBL (domyślnie drblpush.conf).</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>drblConfig</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Obiekt zawierający ustawienia drblpush. Struktura ustawień jest wygląda identycznie jak w pliku drblpush.conf.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="libs_drblMacSelector.js.html">libs/drblMacSelector.js</a>, <a href="libs_drblMacSelector.js.html#line144">line 144</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-drblMacSelector.html">drblMacSelector</a></li><li><a href="module-interfaceHarvester.html">interfaceHarvester</a></li><li><a href="module-ipCalc.html">ipCalc</a></li><li><a href="module-macHarvester.html">macHarvester</a></li></ul><h3>Classes</h3><ul><li><a href="module-drblMacSelector.drblMacSelector.html">drblMacSelector</a></li><li><a href="module-interfaceHarvester-interfaceHarvester.html">interfaceHarvester</a></li><li><a href="module-ipCalc-IPv4.html">IPv4</a></li><li><a href="module-macHarvester-macHarvester.html">macHarvester</a></li></ul><h3>Namespaces</h3><ul><li><a href="lang.html">lang</a></li><li><a href="layout.html">layout</a></li><li><a href="utils.html">utils</a></li></ul><h3>Tutorials</h3><ul><li><a href="tutorial-configuration.html">Konfiguracja</a></li><li><a href="tutorial-installation.html">Instalacja</a></li><li><a href="tutorial-update.html">Aktualizacja</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Tue May 09 2017 19:29:37 GMT+0200 (CEST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

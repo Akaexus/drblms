@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Tutorial: Tworzenie i uzupełnianie drzewa katalogów macbank</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Tutorial: Tworzenie i uzupełnianie drzewa katalogów macbank</h1>
+
+    <section>
+
+<header>
+    
+
+    <h2>Tworzenie i uzupełnianie drzewa katalogów macbank</h2>
+</header>
+
+<article>
+    <p><code>drbmls</code> korzysta z specjalnie uporządkowanej struktury katalogów do zarządzania grupami komputerów.</p>
+<pre class="prettyprint source lang-shell"><code>macbank
+├── biuro
+│   ├── athlony
+│   ├── hp-x2000
+│   └── testowe_komputery
+├── kantor
+│   ├── Apple-Mac-Pro-MD101
+│   └── Apple-Mac-Pro-MD878PL
+├── sala-021
+│   └── hp-z840
+├── sala-029
+│   ├── dell-precision-5720
+│   ├── dell-precision-t7910
+│   ├── fujitsu-celsius-m740
+│   ├── fujitsu-celsius-r940
+│   ├── hp-workstation-z640
+│   ├── hp-workstation-z840
+│   ├── lenovo-thinkstation-p710
+│   └── lenovo-thinkstation-p910
+└── sala-09a
+    └── hp-workstation-z440
+
+5 directories, 15 files</code></pre><p>Wewnątrz katalogu <code>macbank/</code> (<strong>domyślnie zlokalizowany w <code>/etc/drblms/macbank</code>, istnieje możliwość zmiany w <a href="tutorial-etc-drblms-config.json.html">/etc/drblms/config.json</a></strong>) mogą znajdować się <strong>jedynie katalogi</strong> reprezentujące grupy urządzeń, pliki nie będą brane pod uwagę. Nazwy katalogów mogą zawierać następujące znaki:</p>
+<table>
+<thead>
+<tr>
+<th>Znaki dozwolone</th>
+<th style="text-align:center">#</th>
+<th style="text-align:right">Znak <strong>nie</strong>dozwolone</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a-z</td>
+<td style="text-align:center">#</td>
+<td style="text-align:right">{}</td>
+</tr>
+<tr>
+<td>A-Z</td>
+<td style="text-align:center">#</td>
+<td style="text-align:right">\</td>
+<td></td>
+</tr>
+<tr>
+<td>0-9</td>
+<td style="text-align:center">#</td>
+<td style="text-align:right">&amp;</td>
+</tr>
+<tr>
+<td>żółćęśąźń</td>
+<td style="text-align:center">#</td>
+<td style="text-align:right">~</td>
+</tr>
+<tr>
+<td>ŻÓŁĆĘŚĄŹŃ</td>
+<td style="text-align:center">#</td>
+<td style="text-align:right">!</td>
+</tr>
+<tr>
+<td>-</td>
+<td style="text-align:center">#</td>
+<td style="text-align:right">[]</td>
+</tr>
+<tr>
+<td>_</td>
+<td style="text-align:center">#</td>
+<td style="text-align:right">()</td>
+</tr>
+<tr>
+<td>.</td>
+<td style="text-align:center">#</td>
+<td style="text-align:right">^</td>
+</tr>
+<tr>
+<td>,</td>
+<td style="text-align:center">#</td>
+<td style="text-align:right">&quot;</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">#</td>
+<td style="text-align:right">;</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">#</td>
+<td style="text-align:right">spacja</td>
+</tr>
+</tbody>
+</table>
+<p>Wewnątrz katalogów reprezentujących grupy urządzeń znajdują się pliki z adresami MAC. Sposób ich nazywania jest identyczny jak przy katalogach grup.</p>
+<hr>
+<h4>Pliki z adresami MAC</h4><p>Pliki z adresami MAC powinny być zakodowane z użyciem UTF-8. Każdy adres MAC znajduje się w osobnej linijce i jest zapisany w postaci 6 bajtów oddzielonych dwukropkami (<code>:</code>).</p>
+<pre class="prettyprint source"><code>F0:8C:56:64:08:0F
+C9:FF:91:C4:2A:A2
+1B:6D:C9:6C:51:78
+5B:89:74:CF:80:A2
+85:98:F0:F3:01:F5
+08:FC:D2:9E:12:25
+DA:81:05:15:FC:A6
+FA:62:DD:60:A9:F8
+81:4B:08:5B:CA:34
+35:B7:C3:40:AA:41
+EB:B9:6F:7E:6D:5D
+67:F1:4B:73:01:8C</code></pre><hr>
+<h3>Zbieranie adresów MAC</h3><p>Adresy MAC nowych urządzeń mogą zostać dodane poprzez ręczne tworzenie nowych grup i manualne dodawanie adresów MAC. Warto wykorzystać narzędzie <a href="https://github.com/stevenshiau/drbl/blob/master/sbin/drbl-collect-mac"><code>drbl-collect-mac</code></a> do nasłuchiwania sieci i zbierania adresów MAC.</p>
+</article>
+
+</section>
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-drblMacSelector.html">drblMacSelector</a></li><li><a href="module-interfaceHarvester.html">interfaceHarvester</a></li><li><a href="module-ipCalc.html">ipCalc</a></li><li><a href="module-macHarvester.html">macHarvester</a></li></ul><h3>Classes</h3><ul><li><a href="module-drblMacSelector.drblMacSelector.html">drblMacSelector</a></li><li><a href="module-interfaceHarvester-interfaceHarvester.html">interfaceHarvester</a></li><li><a href="module-ipCalc-IPv4.html">IPv4</a></li><li><a href="module-macHarvester-macHarvester.html">macHarvester</a></li></ul><h3>Namespaces</h3><ul><li><a href="lang.html">lang</a></li><li><a href="layout.html">layout</a></li><li><a href="utils.html">utils</a></li></ul><h3>Tutorials</h3><ul><li><a href="tutorial-configuration.html">Konfiguracja</a></li><li><a href="tutorial-installation.html">Instalacja</a></li><li><a href="tutorial-update.html">Aktualizacja</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Tue May 09 2017 19:29:37 GMT+0200 (CEST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

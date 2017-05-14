@@ -1,0 +1,33 @@
+{
+  "tags": {
+    "allowUnknownTags": true
+  },
+  "source": {
+    "includePattern": ".+\\.js(doc|x)?$",
+    "excludePattern": "(^|\\/|\\\\)_",
+    "exclude": ["macbank", "node_modules"]
+  },
+  "plugins": ["plugins/markdown"],
+  "markdown": {
+    "tags": ["foo", "bar"]
+  },
+  "templates": {
+    "cleverLinks": true,
+    "monospaceLinks": true,
+    "default": {
+      "staticFiles": {
+        "paths": ["tutorials/static/"]
+      },
+      "outputSourceFiles": true,
+      "linenums": true
+    }
+  },
+  "opts": {
+    "template": "templates/default",
+    "encoding": "utf8",
+    "destination": "./docs/",
+    "recurse": true,
+    "readme": "README.md",
+    "tutorials": "tutorials/"
+  }
+}

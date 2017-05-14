@@ -1,0 +1,30 @@
+{
+  "configuration": {
+    "title": "Konfiguracja",
+    "children": {
+      "list-of-files": {
+        "title": "Lista plików konfiguracyjnych",
+        "children": {
+          "etc-drblms-config.json": {
+            "title": "/etc/drblms/config.json"
+          },
+          "drblms-config-config.json": {
+            "title": "drblms/config/config.json"
+          },
+          "drblms-config-lang.js": {
+            "title": "drblms/config/lang.js"
+          }
+        }
+      },
+      "macbank-hierarchy": {
+        "title": "Tworzenie i uzupełnianie drzewa katalogów macbank"
+      }
+    }
+  },
+  "installation": {
+    "title": "Instalacja"
+  },
+  "update": {
+    "title": "Aktualizacja"
+  }
+}

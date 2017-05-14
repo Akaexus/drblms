@@ -1,0 +1,2081 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Class: IPv4</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Class: IPv4</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+            <span class="ancestors"><a href="module-ipCalc.html">ipCalc</a>~</span>IPv4</h2>
+        
+            <div class="class-description"><p>Klasa pozwalająca na przeprowadzanie operacji na adresacji IPv4.</p></div>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+    
+    <h2>Constructor</h2>
+    
+
+    <h4 class="name" id="IPv4"><span class="type-signature"></span>new IPv4<span class="signature">(ip, mask)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Sprawdza poprawność przesłanego adresu IP oraz maski podsieci i w razie poprawnej weryfikacji zapisuje je w polu klasy.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>ip</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-ipCalc.html#~ipArray">module:ipCalc~ipArray</a></span>
+|
+
+<span class="param-type"><a href="module-ipCalc.html#~ipString">module:ipCalc~ipString</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Adres ip.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>mask</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-ipCalc.html#~maskArray">module:ipCalc~maskArray</a></span>
+|
+
+<span class="param-type"><a href="module-ipCalc.html#~maskString">module:ipCalc~maskString</a></span>
+|
+
+<span class="param-type"><a href="module-ipCalc.html#~CIDR">module:ipCalc~CIDR</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Maska adresu IP.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="libs_ipCalc.js.html">libs/ipCalc.js</a>, <a href="libs_ipCalc.js.html#line87">line 87</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>const ipCalc = require('./libs/ipCalc.js');
+var ip = new ipCalc('10.0.21.37', '255.0.0.0');
+console.log(ip.info());
+
+// { address: [ 10, 0, 0, 0 ],
+//   cidr: 8,
+//   mask: [ 255, 0, 0, 0 ],
+//   networkAddress: [ 10, 0, 0, 0 ],
+//   broadcastAddress: [ 10, 255, 255, 255 ],
+//   numberOfHosts: 16777214 }</code></pre>
+
+
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id="any2IPArray"><span class="type-signature"></span>any2IPArray<span class="signature">(ip)</span><span class="type-signature"> &rarr; {<a href="module-ipCalc.html#~ipArray">module:ipCalc~ipArray</a>}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>any2IPArray - Konwertuje adres IP do postaci 4-elementowej tablicy oktetów (<code>{module:ipCalc~ipArray</code>). W przypadku niepoprawnego adresu IP metoda zwraca false.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>ip</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-ipCalc.html#~ipArray">module:ipCalc~ipArray</a></span>
+|
+
+<span class="param-type"><a href="module-ipCalc.html#~ipString">module:ipCalc~ipString</a></span>
+|
+
+<span class="param-type"><a href="module-ipCalc.html#~ipCombined">module:ipCalc~ipCombined</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Adres IP w formacie 'x.x.x.x', 'a.b.c.d/mm' lub jako 4-elementowa tablica oktetów.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="libs_ipCalc.js.html">libs/ipCalc.js</a>, <a href="libs_ipCalc.js.html#line128">line 128</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Adres IP.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="module-ipCalc.html#~ipArray">module:ipCalc~ipArray</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+    <h5>Examples</h5>
+    
+    <pre class="prettyprint"><code>const ipCalc = require('./libs/ipCalc.js');
+var ip = new ipCalc('10.0.21.37', '255.0.0.0');
+ip.any2IPArray();           // [10, 0, 21, 37]
+ip.any2IPArray().join('.'); // '10.0.21.37'</code></pre>
+
+    <pre class="prettyprint"><code>const ipCalc = require('./libs/ipCalc.js');
+var ip = new ipCalc();
+ip.any2IPArray('10.0.21.37');    // [10, 0, 21, 37]
+ip.any2IPArray('10.0.21.37/24'); // [10, 0, 21, 37]
+ip.any2IPArray([10, 0, 21, 37]); // [10, 0, 21, 37]</code></pre>
+
+    <pre class="prettyprint"><code>const ipCalc = require('./libs/ipCalc.js');
+var ip = new ipCalc('10.0.21.256', '255.0.0.0'); //niepoprawny adres IP
+ip.any2IPArray(); //false</code></pre>
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="any2MaskArray"><span class="type-signature"></span>any2MaskArray<span class="signature">(mask)</span><span class="type-signature"> &rarr; {<a href="module-ipCalc.html#~maskArray">module:ipCalc~maskArray</a>}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>any2MaskArray - konwertuje adres maski sieciowej w dowolnej postaci do formatu <a href="module-ipCalc.html#~maskArray"><code>module:ipCalc~maskArray</code></a>.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>mask</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-ipCalc.html#~maskArray">module:ipCalc~maskArray</a></span>
+|
+
+<span class="param-type"><a href="module-ipCalc.html#~maskString">module:ipCalc~maskString</a></span>
+|
+
+<span class="param-type"><a href="module-ipCalc.html#~ipCombined">module:ipCalc~ipCombined</a></span>
+|
+
+<span class="param-type"><a href="module-ipCalc.html#~CIDR">module:ipCalc~CIDR</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Maska sieciowa w dowolnym formacie.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="libs_ipCalc.js.html">libs/ipCalc.js</a>, <a href="libs_ipCalc.js.html#line226">line 226</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Przekonwertowana maska sieciowa w postaci <a href="module-ipCalc.html#~maskArray"><code>module:ipCalc~maskArray</code></a>.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="module-ipCalc.html#~maskArray">module:ipCalc~maskArray</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+    <h5>Examples</h5>
+    
+    <pre class="prettyprint"><code>const ipCalc = require('./libs/ipCalc.js');
+var ip = new ipCalc('10.0.21.37', '255.0.0.0');
+ip.any2MaskArray();                // [255, 0, 0, 0]
+ip.any2MaskArrayy().join('.');     // '255.0.0.0'</code></pre>
+
+    <pre class="prettyprint"><code>const ipCalc = require('./libs/ipCalc.js');
+var ip = new ipCalc();
+ip.any2MaskArray('255.0.0.0');     // [255, 0, 0, 0]
+ip.any2MaskArray('10.0.21.37/24'); // [255, 255, 255, 0]
+ip.any2MaskArray(24);              // [255, 255, 255, 0]
+ip.any2MaskArray('/24');           // [255, 255, 255, 0]</code></pre>
+
+    <pre class="prettyprint"><code>const ipCalc = require('./libs/ipCalc.js');
+var ip = new ipCalc();
+ip.any2MaskArray('192.168.1.1');   //false</code></pre>
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="broadcastAddress"><span class="type-signature"></span>broadcastAddress<span class="signature">(address, mask)</span><span class="type-signature"> &rarr; {<a href="module-ipCalc.html#~ipArray">module:ipCalc~ipArray</a>}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Wylicza adres rozgłoszeniowy z podanego adresu IP oraz maski sieciowej.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>address</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-ipCalc.html#~ipArray">module:ipCalc~ipArray</a></span>
+|
+
+<span class="param-type"><a href="module-ipCalc.html#~ipString">module:ipCalc~ipString</a></span>
+|
+
+<span class="param-type"><a href="module-ipCalc.html#~ipCombined">module:ipCalc~ipCombined</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Adres IP.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>mask</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-ipCalc.html#~maskArray">module:ipCalc~maskArray</a></span>
+|
+
+<span class="param-type"><a href="module-ipCalc.html#~maskString">module:ipCalc~maskString</a></span>
+|
+
+<span class="param-type"><a href="module-ipCalc.html#~ipCombined">module:ipCalc~ipCombined</a></span>
+|
+
+<span class="param-type"><a href="module-ipCalc.html#~CIDR">module:ipCalc~CIDR</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Maska podsieci.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="libs_ipCalc.js.html">libs/ipCalc.js</a>, <a href="libs_ipCalc.js.html#line334">line 334</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Adres rozgłoszeniowy.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="module-ipCalc.html#~ipArray">module:ipCalc~ipArray</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+    <h5>Examples</h5>
+    
+    <pre class="prettyprint"><code>const ipCalc = require('./libs/ipCalc.js');
+var ip = new ipCalc();
+ip.broadcastAddress('192.168.1.88', '255.255.255.0')       // [192, 168, 1, 255]
+ip.broadcastAddress('192.168.1.88', [255, 255, 255, 0])    // [192, 168, 1, 255]
+ip.broadcastAddress([192, 168, 1, 88], '255.255.255.0')    // [192, 168, 1, 255]
+ip.broadcastAddress([192, 168, 1, 88], [255, 255, 255, 0]) // [192, 168, 1, 255]
+ip.broadcastAddress([192, 168, 1, 88], 24)                 // [192, 168, 1, 255]
+ip.broadcastAddress([192, 168, 1, 88], '/24')              // [192, 168, 1, 255]
+ip.broadcastAddress('1992.168.1.1/24')                     // [192, 168, 1, 255]</code></pre>
+
+    <pre class="prettyprint"><code>const ipCalc = require('./libs/ipCalc.js');
+var ip = new ipCalc('192.168.1.88/24');
+ip.broadcastAddress()                                      // [192, 168, 1, 255]</code></pre>
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="CIDR2MaskArray"><span class="type-signature"></span>CIDR2MaskArray<span class="signature">(cidr)</span><span class="type-signature"> &rarr; {<a href="module-ipCalc.html#~maskArray">module:ipCalc~maskArray</a>}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>CIDR2MaskArray - Konwertuje maske podsieci zapisaną w formacie CIDR do 4-elementowej tablicy oktetów adresu maski.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>cidr</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-ipCalc.html#~CIDR">module:ipCalc~CIDR</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Maska podsieci zapisana w formacie CIDR.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="libs_ipCalc.js.html">libs/ipCalc.js</a>, <a href="libs_ipCalc.js.html#line171">line 171</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Maska podsieci zapisana w formacie 4-elementowej tablicy oktetów.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="module-ipCalc.html#~maskArray">module:ipCalc~maskArray</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>const ipCalc = require('./libs/ipCalc.js');
+var ip = new ipCalc();
+ip.CIDR2MaskArray(12); //[255, 240, 0, 0]</code></pre>
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="getSubnets"><span class="type-signature"></span>getSubnets<span class="signature">(address, Maska, numberOfSubnets)</span><span class="type-signature"> &rarr; {<a href="module-ipCalc.html#~subnetsInfo">module:ipCalc~subnetsInfo</a>}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>getSubnets - zwraca obiekt <a href="module-ipCalc.html#~subnetsInfo"><code>module:ipCalc~subnetsInfo</code></a> z adresami podsieci.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>address</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-ipCalc.html#~ipArray">module:ipCalc~ipArray</a></span>
+|
+
+<span class="param-type"><a href="module-ipCalc.html#~ipString">module:ipCalc~ipString</a></span>
+|
+
+<span class="param-type"><a href="module-ipCalc.html#~ipCombined">module:ipCalc~ipCombined</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Adres IP.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>Maska</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-ipCalc.html#~maskArray">module:ipCalc~maskArray</a></span>
+|
+
+<span class="param-type"><a href="module-ipCalc.html#~maskString">module:ipCalc~maskString</a></span>
+|
+
+<span class="param-type"><a href="module-ipCalc.html#~ipCombined">module:ipCalc~ipCombined</a></span>
+|
+
+<span class="param-type"><a href="module-ipCalc.html#~CIDR">module:ipCalc~CIDR</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>podsieci.            description</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>numberOfSubnets</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Liczba podsieci.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="libs_ipCalc.js.html">libs/ipCalc.js</a>, <a href="libs_ipCalc.js.html#line427">line 427</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Obiekt z tablicą podsieci.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="module-ipCalc.html#~subnetsInfo">module:ipCalc~subnetsInfo</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+    <h5>Examples</h5>
+    
+    <pre class="prettyprint"><code>const ipCalc = require('./libs/ipCalc.js');
+var ip = new ipCalc('172.16.0.0/12');
+console.log(ip.getSubnets(7));
+// { subnetCIDR: 15,
+//   subnetMask: [ 255, 254, 0, 0 ],
+//   usedSubnets: 7,
+//   unusedSubnets: 1,
+//   numberOfHostsInSubnet: 131070,
+//   subnets:
+//    [ [ 172, 16, 0, 0 ],
+//      [ 172, 18, 0, 0 ],
+//      [ 172, 20, 0, 0 ],
+//      [ 172, 22, 0, 0 ],
+//      [ 172, 24, 0, 0 ],
+//      [ 172, 26, 0, 0 ],
+//      [ 172, 28, 0, 0 ] ] }</code></pre>
+
+    <pre class="prettyprint"><code>const ipCalc = require('./libs/ipCalc.js');
+var ip = new ipCalc('192.168.1.1/24');
+console.log(ip.getSubnets(1337)); //false
+// nie można utworzyć 1337 sieci przy masce /24</code></pre>
+
+    <pre class="prettyprint"><code>const ipCalc = require('./libs/ipCalc.js');
+var ip = new ipCalc();
+console.log(ip.getSubnets('172.16.0.0/12', 3));
+// { subnetCIDR: 14,
+//   subnetMask: [ 255, 252, 0, 0 ],
+//   usedSubnets: 3,
+//   unusedSubnets: 1,
+//   numberOfHostsInSubnet: 262142,
+//   subnets: [ [ 172, 16, 0, 0 ], [ 172, 20, 0, 0 ], [ 172, 24, 0, 0 ] ] }</code></pre>
+
+    <pre class="prettyprint"><code>const ipCalc = require('./libs/ipCalc.js');
+var ip = new ipCalc();
+console.log(ip.getSubnets('172.16.0.0', '255.240.0.0', 7));
+// { subnetCIDR: 15,
+//   subnetMask: [ 255, 254, 0, 0 ],
+//   usedSubnets: 7,
+//   unusedSubnets: 1,
+//   numberOfHostsInSubnet: 131070,
+//   subnets:
+//    [ [ 172, 16, 0, 0 ],
+//      [ 172, 18, 0, 0 ],
+//      [ 172, 20, 0, 0 ],
+//      [ 172, 22, 0, 0 ],
+//      [ 172, 24, 0, 0 ],
+//      [ 172, 26, 0, 0 ],
+//      [ 172, 28, 0, 0 ] ] }</code></pre>
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="info"><span class="type-signature"></span>info<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="module-ipCalc.html#~ipInfo">module:ipCalc~ipInfo</a>}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>info - Zbiera informacje o adresacji przekazanej w konstuktorze i zwraca w postaci <a href="module-ipCalc.html#~ipInfo"><code>module:ipCalc~ipInfo</code></a>.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="libs_ipCalc.js.html">libs/ipCalc.js</a>, <a href="libs_ipCalc.js.html#line487">line 487</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Informacje o adresacji.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="module-ipCalc.html#~ipInfo">module:ipCalc~ipInfo</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>const ipCalc = require('./libs/ipCalc.js');
+var ip = new ipCalc('172.16.0.0/12');
+console.log(ip.info());
+// { address: [ 172, 16, 0, 0 ],
+//   cidr: 12,
+//   mask: [ 255, 240, 0, 0 ],
+//   networkAddress: [ 172, 16, 0, 0 ],
+//   broadcastAddress: [ 172, 31, 255, 255 ],
+//   numberOfHosts: 1048574 }</code></pre>
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="mask2CIDR"><span class="type-signature"></span>mask2CIDR<span class="signature">(mask)</span><span class="type-signature"> &rarr; {<a href="module-ipCalc.html#~CIDR">module:ipCalc~CIDR</a>}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>mask2CIDR - Konwertuje adres maski sieciowej (<a href="module-ipCalc.html#~maskArray"><code>module:ipCalc~maskArray</code></a>) do formatu <a href="module-ipCalc.html#~CIDR"><code>module:ipCalc~CIDR</code></a>.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>mask</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-ipCalc.html#~maskArray">module:ipCalc~maskArray</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Maska sieciowa.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="libs_ipCalc.js.html">libs/ipCalc.js</a>, <a href="libs_ipCalc.js.html#line262">line 262</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Maska sieciowa w formacie CIDR.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="module-ipCalc.html#~CIDR">module:ipCalc~CIDR</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>const ipCalc = require('./libs/ipCalc.js');
+var ip = new ipCalc();
+ip.any2MaskArray([255, 255, 255, 255]); // 32
+ip.any2MaskArray('255.255.192.0');      // 18
+ip.any2MaskArray('192.168.1.1/24');     // 24
+ip.any2MaskArray('/24');                // 24
+ip.any2MaskArray('24');                 // 24</code></pre>
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="networkAddress"><span class="type-signature"></span>networkAddress<span class="signature">(address, mask)</span><span class="type-signature"> &rarr; {<a href="module-ipCalc.html#~ipArray">module:ipCalc~ipArray</a>}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Wylicza adres podsieci z podanego adresu IP oraz maski sieciowej.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>address</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-ipCalc.html#~ipArray">module:ipCalc~ipArray</a></span>
+|
+
+<span class="param-type"><a href="module-ipCalc.html#~ipString">module:ipCalc~ipString</a></span>
+|
+
+<span class="param-type"><a href="module-ipCalc.html#~ipCombined">module:ipCalc~ipCombined</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Adres IP.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>mask</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-ipCalc.html#~maskArray">module:ipCalc~maskArray</a></span>
+|
+
+<span class="param-type"><a href="module-ipCalc.html#~maskString">module:ipCalc~maskString</a></span>
+|
+
+<span class="param-type"><a href="module-ipCalc.html#~ipCombined">module:ipCalc~ipCombined</a></span>
+|
+
+<span class="param-type"><a href="module-ipCalc.html#~CIDR">module:ipCalc~CIDR</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Maska podsieci.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="libs_ipCalc.js.html">libs/ipCalc.js</a>, <a href="libs_ipCalc.js.html#line297">line 297</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Adres podsieci.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="module-ipCalc.html#~ipArray">module:ipCalc~ipArray</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+    <h5>Examples</h5>
+    
+    <pre class="prettyprint"><code>const ipCalc = require('./libs/ipCalc.js');
+var ip = new ipCalc();
+ip.networkAddress('192.168.1.88', '255.255.255.0')       // [192, 168, 1, 0]
+ip.networkAddress('192.168.1.88', [255, 255, 255, 0])    // [192, 168, 1, 0]
+ip.networkAddress([192, 168, 1, 88], '255.255.255.0')    // [192, 168, 1, 0]
+ip.networkAddress([192, 168, 1, 88], [255, 255, 255, 0]) // [192, 168, 1, 0]
+ip.networkAddress([192, 168, 1, 88], 24)                 // [192, 168, 1, 0]
+ip.networkAddress([192, 168, 1, 88], '/24')              // [192, 168, 1, 0]
+ip.networkAddress('1992.168.1.1/24')                     // [192, 168, 1, 0]</code></pre>
+
+    <pre class="prettyprint"><code>const ipCalc = require('./libs/ipCalc.js');
+var ip = new ipCalc('192.168.1.88/24');
+ip.networkAddress()                                      // [192, 168, 1, 0]</code></pre>
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="numberOfHosts"><span class="type-signature"></span>numberOfHosts<span class="signature">(mask)</span><span class="type-signature"> &rarr; {number}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Wylicza liczbę użytecznych adresów (możliwych do przypisania hostom) w sieci.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>mask</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-ipCalc.html#~maskArray">module:ipCalc~maskArray</a></span>
+|
+
+<span class="param-type"><a href="module-ipCalc.html#~maskString">module:ipCalc~maskString</a></span>
+|
+
+<span class="param-type"><a href="module-ipCalc.html#~ipCombined">module:ipCalc~ipCombined</a></span>
+|
+
+<span class="param-type"><a href="module-ipCalc.html#~CIDR">module:ipCalc~CIDR</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Maska sieciowa.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="libs_ipCalc.js.html">libs/ipCalc.js</a>, <a href="libs_ipCalc.js.html#line362">line 362</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Liczba użytecznych adresów w sieci.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>const ipCalc = require('./libs/ipCalc.js');
+var ip = new ipCalc();
+ip.numberOfHosts('255.255.255.0')    //254
+ip.numberOfHosts([255, 255, 255, 0]) //254
+ip.numberOfHosts('/24')              //254
+ip.numberOfHosts(24)                 //254</code></pre>
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="valiadeMaskArray"><span class="type-signature"></span>valiadeMaskArray<span class="signature">(maskArray)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Weryfikuje maskę sieciową i zwraca false w przypadku wykrycia błędu.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>maskArray</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-ipCalc.html#~maskArray">module:ipCalc~maskArray</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Maska sieciowa w formacie <a href="module-ipCalc.html#~maskArray"><code>module:ipCalc~maskArray</code></a>.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="libs_ipCalc.js.html">libs/ipCalc.js</a>, <a href="libs_ipCalc.js.html#line193">line 193</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>description</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>const ipCalc = require('./libs/ipCalc.js');
+var ip = new ipCalc();
+ip.validateMaskArray([255, 240, 0, 0]); //true
+ip.validateMaskArray([255, 0, 255, 0]); //false
+ip.validateMaskArray([255, 255, 253, 0]); //false</code></pre>
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-drblMacSelector.html">drblMacSelector</a></li><li><a href="module-interfaceHarvester.html">interfaceHarvester</a></li><li><a href="module-ipCalc.html">ipCalc</a></li><li><a href="module-macHarvester.html">macHarvester</a></li></ul><h3>Classes</h3><ul><li><a href="module-drblMacSelector.drblMacSelector.html">drblMacSelector</a></li><li><a href="module-interfaceHarvester-interfaceHarvester.html">interfaceHarvester</a></li><li><a href="module-ipCalc-IPv4.html">IPv4</a></li><li><a href="module-macHarvester-macHarvester.html">macHarvester</a></li></ul><h3>Namespaces</h3><ul><li><a href="lang.html">lang</a></li><li><a href="layout.html">layout</a></li><li><a href="utils.html">utils</a></li></ul><h3>Tutorials</h3><ul><li><a href="tutorial-configuration.html">Konfiguracja</a></li><li><a href="tutorial-installation.html">Instalacja</a></li><li><a href="tutorial-update.html">Aktualizacja</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Tue May 09 2017 19:29:37 GMT+0200 (CEST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
