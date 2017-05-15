@@ -27,7 +27,7 @@
     "encoding": "utf8",
     "destination": "./docs/",
     "recurse": true,
-    "readme": "README.md",
+    "readme": "tutorials/README.md",
     "tutorials": "tutorials/"
   }
 }
