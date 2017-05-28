@@ -9,7 +9,6 @@
     "ini": "^1.3.4"
   },
   "devDependencies": {
-    "ink-docstrap": "^1.3.0",
     "jsdoc": "^3.4.3"
   },
   "bin": {
