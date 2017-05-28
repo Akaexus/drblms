@@ -1,6 +1,7 @@
 {
   "name": "drblms",
   "version": "0.0.1",
+  "author": "Dzban <dzban@protonmail.com>",
   "description": "Small utility to select group of computers to deploy operating systems using DRBL.",
   "main": "index.js",
   "dependencies": {
@@ -14,11 +15,20 @@
   "bin": {
     "drblms": "./index.js"
   },
+  "main": "libs/drblMacSelector.js",
+  "bugs": {
+    "url": "https://github.com/dzban/drblms/issues"
+  },
   "scripts": {
     "start": "node index.js",
     "doc": "./node_modules/.bin/jsdoc -c jsdoc.json .",
     "docstrap": "./node_modules/.bin/jsdoc -c jsdocstrap.json ."
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dzban/drblms.git"
+  },
+  "preferGlobal": true,
   "keywords": [
     "drbl",
     "mac",
